@@ -2,4 +2,16 @@ extends layout
 
 block content
   h1= title
-  p Welcome to #{title}
+  p Hello Express World
+  button(type="button", class="btn btn-warning", onClick='goFaster()') Press Me
+  div(id = "faster") Increase the speed
+  script.
+      var mph = 20;
+      var change = 1;
+
+      function goFaster(){
+          mph = mph + change;
+          change = change + 1;
+          document.getElementById("faster").textContent = "MPH " + mph + " with change " + change; 
+      }
+
